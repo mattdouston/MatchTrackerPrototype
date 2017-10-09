@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BDy-9o-WMa">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Welcome-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="Welcome" id="BYZ-38-t0r" customClass="StartPageViewController" customModule="MatchTrackerPrototype" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTF-mR-u1J">
+                                <rect key="frame" x="108" y="312.5" width="159" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Add Opponent"/>
+                                <connections>
+                                    <action selector="addOpponentPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Pb-Kp-weI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQ2-Nc-RiQ">
+                                <rect key="frame" x="130.5" y="404.5" width="114" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="View Stats"/>
+                                <connections>
+                                    <action selector="viewStatsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MJ2-tI-EsM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfx-Og-kAJ">
+                                <rect key="frame" x="126" y="220.5" width="123" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="New Match"/>
+                                <connections>
+                                    <action selector="newMatchPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ft5-Jz-LqP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="PTF-mR-u1J" firstAttribute="top" secondItem="mfx-Og-kAJ" secondAttribute="bottom" constant="50" id="BZ0-MC-erS"/>
+                            <constraint firstItem="PTF-mR-u1J" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PPJ-Xa-3DG"/>
+                            <constraint firstItem="mfx-Og-kAJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="amp-X8-lt3"/>
+                            <constraint firstItem="XQ2-Nc-RiQ" firstAttribute="top" secondItem="PTF-mR-u1J" secondAttribute="bottom" constant="50" id="tf2-xc-a5F"/>
+                            <constraint firstItem="XQ2-Nc-RiQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vAy-N6-ec8"/>
+                            <constraint firstItem="PTF-mR-u1J" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="z08-RT-akW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Welcome" id="qZl-xs-o0e"/>
+                    <connections>
+                        <segue destination="zD6-jA-Nku" kind="show" identifier="newMatchSegue" id="8eh-h2-YcB"/>
+                        <segue destination="M0v-Xq-GUt" kind="show" identifier="addOpponentSegue" id="SvZ-SP-Zno"/>
+                        <segue destination="sCf-w7-nD5" kind="show" identifier="viewStatsSegue" id="Aek-7d-OB6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="372" y="33.733133433283363"/>
+        </scene>
+        <!--Match View Controller-->
+        <scene sceneID="aVH-89-bdz">
+            <objects>
+                <viewController id="zD6-jA-Nku" customClass="MatchViewController" customModule="MatchTrackerPrototype" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IYq-dC-Fyb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="this is a match" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rap-KQ-7Ek">
+                                <rect key="frame" x="166" y="323" width="111" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="rog-Oh-b7w"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mUP-AL-AMA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1273" y="-857"/>
+        </scene>
+        <!--Add Opponent View Controller-->
+        <scene sceneID="QxA-iE-tTo">
+            <objects>
+                <viewController id="M0v-Xq-GUt" customClass="AddOpponentViewController" customModule="MatchTrackerPrototype" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a3X-dQ-CeA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2Y-G3-QxQ">
+                                <rect key="frame" x="112" y="276" width="121" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add an Opponent"/>
+                                <connections>
+                                    <action selector="addOpponentPressed:" destination="M0v-Xq-GUt" eventType="touchUpInside" id="wie-Jb-lu3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SWs-xJ-w1i">
+                                <rect key="frame" x="70" y="401" width="205" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="tap to see test console output"/>
+                                <connections>
+                                    <action selector="testPressed:" destination="M0v-Xq-GUt" eventType="touchUpInside" id="uUo-se-7oF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="k1O-m2-X9P"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pTR-Vn-bDN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1273" y="-168"/>
+        </scene>
+        <!--View Stats View Controller-->
+        <scene sceneID="IMT-YT-n4G">
+            <objects>
+                <viewController id="sCf-w7-nD5" customClass="ViewStatsViewController" customModule="MatchTrackerPrototype" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jdc-qf-ACi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="E6v-cq-cLZ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Jng-9X-uFH" firstAttribute="trailing" secondItem="E6v-cq-cLZ" secondAttribute="trailing" id="JnW-Lc-IS3"/>
+                            <constraint firstItem="E6v-cq-cLZ" firstAttribute="top" secondItem="Jng-9X-uFH" secondAttribute="top" id="aBC-DX-xIE"/>
+                            <constraint firstItem="Jng-9X-uFH" firstAttribute="bottom" secondItem="E6v-cq-cLZ" secondAttribute="bottom" id="coq-Do-6Fi"/>
+                            <constraint firstItem="E6v-cq-cLZ" firstAttribute="leading" secondItem="Jng-9X-uFH" secondAttribute="leading" id="dL9-si-1NJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Jng-9X-uFH"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="01W-T3-hdM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1273" y="501"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="HZ6-pb-EHt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BDy-9o-WMa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eNc-3C-P9x">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="dzy-RI-XxJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hvJ-JJ-o10" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-575" y="34"/>
+        </scene>
+    </scenes>
+</document>
